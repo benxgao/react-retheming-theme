@@ -1,0 +1,47 @@
+{
+  "name": "styled-react-retheming",
+  "version": "0.1.0",
+  "description": "Flexible React theming with styled-components",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rm -rf dist && rollup -c",
+    "build:watch": "rollup -cw",
+    "test": "npm run jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:loveloper/styled-react-retheming.git"
+  },
+  "keywords": [
+    "styled-components",
+    "theme",
+    "react",
+    "theming",
+    "colors"
+  ],
+  "author": "Loveloper",
+  "license": "MIT",
+  "dependencies": {
+    "deepmerge": "^4.2.2",
+    "merge-options": "^3.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-proposal-object-rest-spread": "7.11.0",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-typescript": "^7.10.4",
+    "@rollup/plugin-babel": "5.2.0",
+    "@rollup/plugin-commonjs": "15.0.0",
+    "@rollup/plugin-node-resolve": "9.0.0",
+    "babel-jest": "^26.3.0",
+    "babel-plugin-external-helpers": "6.22.0",
+    "jest": "^26.4.2",
+    "rollup": "2.26.10"
+  }
+}
