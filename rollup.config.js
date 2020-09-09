@@ -1,6 +1,7 @@
 import resolve from '@rollup/plugin-node-resolve';
 import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
+import typescript from 'rollup-plugin-typescript';
 
 import pkg from './package.json';
 
@@ -11,7 +12,7 @@ const nodeDeps = ['path'];
 require('fs').unlink('dist/index.d.ts', (err) => {});
 
 export default {
-  input: 'src/index.js',
+  input: 'src/index.ts',
   files: ['dist/*'],
   output: [
     { file: pkg.main, format: 'cjs', exports: 'named' },
@@ -26,7 +27,7 @@ export default {
       presets: [['@babel/preset-env', { targets: { node: 8 } }]],
       exclude: 'node_modules/**',
     }),
-    // typescript(),
+    typescript(),
   ],
   external: externalDeps.concat(nodeDeps),
 };
