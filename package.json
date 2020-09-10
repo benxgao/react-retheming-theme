@@ -2,25 +2,27 @@
   "name": "styled-react-retheming",
   "version": "0.1.0",
   "description": "Flexible React theming with styled-components",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.es.js",
-  "files": [
-    "dist",
-    "README.md"
-  ],
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "build": "rm -rf dist && rollup -c && tsc",
-    "build:watch": "rollup -cw",
-    "lint": "eslint src",
-    "test": "jest --watch",
-    "tsc": "tsc",
-    "tsc:watch": "tsc -- --watch"
-  },
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git@github.com:loveloper/styled-react-retheming.git"
   },
+  "author": "Loveloper",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
+  "scripts": {
+    "build": "rm -rf dist && rollup -c && tsc",
+    "build:watch": "rollup -cw",
+    "lint": "eslint src",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "tsc": "tsc",
+    "tsc:watch": "tsc -- --watch"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "keywords": [
     "styled-components",
     "theme",
@@ -28,18 +30,6 @@
     "theming",
     "colors"
   ],
-  "author": "Loveloper",
-  "license": "MIT",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{ts,js}": [
-      "eslint ."
-    ]
-  },
   "dependencies": {
     "deepmerge": "^4.2.2",
     "merge-options": "^3.0.1"
@@ -74,5 +64,16 @@
     "rollup-plugin-typescript": "^1.0.1",
     "tslib": "^2.0.1",
     "typescript": "^4.0.2"
+  },
+  "types": "dist/index.d.ts",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,js}": [
+      "eslint ."
+    ]
   }
 }

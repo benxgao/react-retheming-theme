@@ -5,9 +5,6 @@ import typescript from 'rollup-plugin-typescript';
 
 import pkg from './package.json';
 
-const externalDeps = Object.keys(Object.assign({}, pkg.dependencies, pkg.peerDependencies));
-const nodeDeps = ['path'];
-
 // delete old typings to avoid issues
 require('fs').unlink('dist/index.d.ts', (err) => {});
 
@@ -24,10 +21,12 @@ export default {
     }),
     commonjs(),
     babel({
-      presets: [['@babel/preset-env', { targets: { node: 8 } }]],
+      presets: [['@babel/preset-env', { targets: { node: 10 } }]],
       exclude: 'node_modules/**',
     }),
-    typescript(),
+    typescript({
+      typescript: require('typescript'),
+    }),
   ],
-  external: externalDeps.concat(nodeDeps),
+  external: [...Object.keys(pkg.dependencies || {}), ...Object.keys(pkg.peerDependencies || {})],
 };

@@ -1,29 +1,12 @@
 import deepmerge from 'merge-options';
 import defaultTheme from './themes/default';
-
-interface RethemingTheme {
-  colors: object;
-  components: object;
-  utils: object;
-}
-
-interface customRethemingThemeArgs {
-  colors: object;
-  components: object;
-  isColorReset: boolean;
-}
-
-interface RethemingComponentProps {
-  theme: RethemingTheme;
-  rethemingComponentName: string;
-  rethemingStyles?: object;
-}
+import { CustomRethemingThemeArgs, RethemingTheme, RethemingComponentProps } from './types';
 
 const customRethemingTheme = ({
   colors,
   components,
   isColorReset = true,
-}: customRethemingThemeArgs): RethemingTheme => {
+}: CustomRethemingThemeArgs): RethemingTheme => {
   const newColors = isColorReset ? colors : deepmerge(defaultTheme.colors, colors);
 
   const newTheme = {

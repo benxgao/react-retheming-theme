@@ -1,11 +1,17 @@
-export interface StyledTheme {
+export interface RethemingTheme {
   colors: any;
-  components: object;
-  utils: any;
+  components: any;
+  utils: object;
 }
 
-export interface ThemeProps {
-  theme: StyledTheme;
-  rethemingComponentName?: string;
-  rethemingStyles?: object;
+export interface CustomRethemingThemeArgs {
+  colors: any;
+  components: any;
+  isColorReset: boolean;
+}
+
+export interface RethemingComponentProps {
+  theme: RethemingTheme;
+  rethemingComponentName: string;
+  rethemingStyles?: any;
 }
