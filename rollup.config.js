@@ -21,7 +21,7 @@ export default {
     }),
     commonjs(),
     babel({
-      presets: [['@babel/preset-env', { targets: { node: 10 } }]],
+      presets: [['@babel/preset-env', { targets: { node: 14 } }]],
       exclude: 'node_modules/**',
     }),
     typescript({

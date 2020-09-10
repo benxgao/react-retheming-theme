@@ -9,11 +9,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - uses: actions/setup-node@v1
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
         with:
-          node-version: 8
-      - run: npm install
-      - run: npm run lint
+          node-version: 14
+      - name: Install Node.js dependencies
+        run: npm install
+      - name: Run linters
+        uses: wearerequired/lint-action@v1
+        with:
+          github_token: ${{ secrets.GIT_TOKEN }}
+          eslint: true
+          prettier: true
       - run: npm run test
       - name: Release to npm
         uses: JS-DevTools/npm-publish@v1
