@@ -22,7 +22,7 @@ import { ThemeProvider } from 'styled-components';
 // Import theme object which contains utils to retheme components, as well as default colors
 import theme from 'react-retheming';
 
-const ThemeWrapper = ({ children }) => <ThemeProvider {...{ theme }}>{children}</ThemeProvider>;
+<ThemeProvider {...{ theme }}>{children}</ThemeProvider>;
 ```
 
 ### **2. Retheme components**
