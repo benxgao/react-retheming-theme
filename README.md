@@ -2,7 +2,7 @@
 
 <div align="center">
 
-### Flexable theming on [React](https://reactjs.org/) components
+### A JavaScript library of building your own React UI frameworks with minimum effort.
 
 <br />
 
@@ -10,6 +10,14 @@
 ![Code style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)
 
 </div>
+
+## Project motivation
+
+- Designers can specify their own design values on top of mainstream React component libraries;
+- Developers can build up React component libraries on top of the design values, by combining components chosen from React frameworks and independent component libraries with minimum efforts;
+- Themes can be easily customized and reused;
+
+![](./docs/theming.png)
 
 ## Get started with [styled-components](https://github.com/styled-components/styled-components)
 
